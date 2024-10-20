@@ -245,7 +245,8 @@ figcaption {
 }
 
 
-.gridContainer {
+
+.itemContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -253,76 +254,57 @@ figcaption {
     align-items: stretch;
 }
 
-
-.gridItem1{
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 0.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: calc(50% - 0.5rem);
-    flex: 0 1 calc(50% - 0.5rem);
-    margin: 0 1rem 0 0;
-    max-height: 100vh;
-}
-
-.gridItem2, .gridItem3 {
+.item {
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    max-width: calc(50% - 0.5rem);
-    flex: 0 1 calc(50% - 0.5rem);
-    margin: 0;
-    max-height: 100vh;
+    flex: 1 1 45%;
+    margin: 1rem;
+    min-height: 100px;
+    overflow: visible;
+    word-wrap: break-word;
 }
 
-.gridItem1 img {
+.item img {
     border-radius: 50%;
-    max-width: 100%;
-    height: auto;
-    max-height: 200px;
-    transition: 0.3s;
+    width: 20vw;
+    height: 20vw;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
 }
 
-
-.gridItem1 p, .gridItem2 p, .gridItem3 p {
-    max-width: 100%;
-    font-size: 0.9rem;
+.item p {
+    font-size: 1rem;
     color: #474747;
     margin-top: 10px;
-    word-wrap: break-word;
-    text-align: center;
-    
-    max-height: 100%;
-    overflow: hidden; /* Prevent overflow */
-    line-height: 1.5; /* Adjust line height for readability */
+    overflow-wrap: break-word;
+    line-height: 1.5;
 }
+
+
 @media only screen and (max-width: 700px){
     .modal-content {
         width: 100%;
     }
-    .lefth1, .righth1, .galleryh1{
+    .galleryh1{
         font-size: 2rem;
     }
     .gridContainer {
-            font-size: 0.9rem;
+        font-size: 0.9rem;
 
-        flex-direction: column; /* Stack items vertically */
-        margin-top: 0; /* Reset margin */
-        /* margin: 0 auto; */
+        flex-direction: column;
+        margin-top: 0; 
     }
     
-    .gridItem1 {
-        height: 100vh; /* Allow height to adjust */
-        flex: 1 1 40%; /* Full width on smaller screens */
+    .gridItem1, .gridItem2, .gridItem3 {
+        flex: 1 1 100%;
     }
 
-    .gridItem2, .gridItem3 {
-        margin: 0;
-        flex: 1 1 25%; /* Full width on smaller screens */
-        height: auto; /* Allow height to adjust */
+    .gridItem1 p, .gridItem2 p{
+        font-size: 0.8;
     }
-
 }
