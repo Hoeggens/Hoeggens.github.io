@@ -13,7 +13,7 @@
     <div class="wrapper">
     <header>
         <h1><a class="topHeader" href="index.html">
-            Pontus Höglund</h1>
+            <i class="bi bi-house"></i></h1>
         </a>
         <nav>
             <ul>
@@ -23,28 +23,90 @@
             </ul>
         </nav>
     </header>
-    <a href="index.html">
-
-        <i class="bi bi-arrow-left-square-fill icon"></i>
-    </a>
+    
+    <h1 class="galleryh1">Galleri</h1>
     <main>
-        <div class="center">
-            <section>
-                <h2>Galleri</h2>
-                <article class="cards">
-                    <p>Här är mina bilder hittills</p>
-                        <img src="img/supermower.jpg">
-                        <img src="img/image.png">
-                        <img src="img/TEST.jpg">
-                    </div>
-            </article>
-        </section>
+        
+        <section>
+            
+    <div class="figureContainer">
+
+        <figure>
+            <img src="img/supermower.jpg" alt="Super Mower" class="clickable">
+            <figcaption class="1">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="img/image.png" alt="Super Mower" class="clickable">
+            <figcaption class="2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="img/TEST.jpg" alt="Super Mower" class="clickable">
+            <figcaption class="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</figcaption>
+        </figure>
+        
+        <figure>
+            <img src="img/parallax-image-1024x585.webp" alt="Super Mower" class="clickable">
+            <figcaption class="4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/1000_F_548637042_gtbySkWhTEnL0GLF4HMPLVuj5PGbvRzh.jpg" alt="Super Mower" class="clickable">
+            <figcaption class="5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</figcaption>
+        </figure>
+
+        <figure>
+            <img src="img/superletterjpg.jpg" alt="Super Mower" class="clickable">
+            <figcaption class="6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</figcaption>
+        </figure>
+
+    </div>
+    </section>
     </main>
     
     <footer>
         <p>&copy; 2024 Min Portfolio</p>
     </footer>
-</div>
     
+    <script>
+        var modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        var modalContent = document.createElement('img');
+        modalContent.classList.add('modal-content');
+
+        var captionText = document.createElement('div');
+        captionText.setAttribute('id', 'caption');
+
+        modal.appendChild(modalContent);
+        modal.appendChild(captionText);
+        document.body.appendChild(modal);
+
+        var images = document.querySelectorAll('.clickable');
+        var captions = document.querySelectorAll('figcaption');
+
+        images.forEach(function (image, index) {
+            image.onclick = function () {
+                modalContent.src = image.src;
+                captionText.innerHTML = captions[index].innerHTML;
+                modal.style.display = 'block';
+            };
+        });
+        modalContent.onclick = function () {
+            modal.style.display = 'none';
+        };
+
+        captionText.onclick = function () {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+
 </body>
 </html>
