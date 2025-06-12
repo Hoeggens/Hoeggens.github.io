@@ -1,0 +1,139 @@
+"use client";
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
+
+const Navbar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const navLinkStyles =
+    "relative inline-block text-text transition-transform transform hover:scale-110 hover:text";
+  const underlineStyles =
+    "after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-text after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300";
+
+  const links = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+    { href: "/my-projects", label: "My Projects" },
+  ];
+
+  return (
+    <nav
+      className={`
+        transition-all duration-500 ease-in-out
+        fixed top-0 left-0 w-full z-30 bg-bg opacity-90
+        ${isScrolled ? "py-2" : "py-6"}
+      `}
+    >
+      <div className="w-full px-6 flex justify-between items-center md:justify-between">
+        {/* Hamburger Icon (left on mobile) */}
+        <button
+          className="md:hidden flex items-center p-2 transition-transform duration-300"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-label="Toggle menu"
+        >
+          <svg
+            className={`h-8 w-8 text-text transition-transform duration-300 ${
+              menuOpen ? "rotate-90 scale-110" : ""
+            }`}
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+          >
+            {menuOpen ? (
+              // X icon
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              // Hamburger icon
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+        {/* SVG Icon */}
+        <a
+          href="/"
+          className={`
+            flex items-center
+            ${/* Center on mobile, left on desktop */ ""}
+            absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0
+          `}
+          style={{ zIndex: 40 }}
+        >
+          <img
+            src="/svg/eph_colored_icon.svg"
+            alt="Logo"
+            className="h-14 w-14 md:h-10 md:w-10 transition-all duration-300"
+          />
+        </a>
+        {/* Desktop Links */}
+        <div className="flex-1 flex justify-center">
+          <ul className="hidden md:flex space-x-24 text-lg font-semibold">
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`${navLinkStyles} ${underlineStyles}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* Spacer for mobile to balance hamburger and logo */}
+        <div className="w-8 h-8 md:hidden" />
+      </div>
+      {/* Mobile Dropdown */}
+      <div
+        className={`
+          md:hidden bg-bg px-6 pb-4 pt-2 transition-all duration-300
+          ${
+            menuOpen
+              ? "max-h-96 opacity-100"
+              : "max-h-0 opacity-0 overflow-hidden"
+          }
+        `}
+        style={{ transitionProperty: "max-height, opacity" }}
+      >
+        <ul className="flex flex-col space-y-4 text-lg font-semibold pl-4">
+          {links.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className={`${navLinkStyles} ${underlineStyles}`}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

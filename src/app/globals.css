@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+    :root {
+  --color-bg: #F9F9F6;
+  --color-text: #3C3C3C;
+  --color-accent: #D83A3A;
+  --color-secondary-text: #6E6E6E;
+  --color-card-bg: #FFFFFF;
+  --color-border: #A6AA9B;
+  --color-footer: #A6AA9B;
+  --color-hoverlink: #B62F2F;
+}
+
