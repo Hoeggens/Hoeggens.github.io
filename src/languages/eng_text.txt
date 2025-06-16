@@ -1,0 +1,54 @@
+## HEROSECTION ##
+
+Hi, I'm Eric Pontus Höglund
+
+Newly graduated and passionate developer
+
+eager to build beautiful and functional experiences.
+
+## PROJECTSECTION ##
+
+          My Projects
+
+          Here you'll find a range of projects that showcase my experience
+          across various technologies and domains. From modern web development
+          to embedded systems and creative hardware solutions, each project
+          highlights different skills and problem-solving approaches.
+
+          Explore these examples to see how I bring ideas to life—whether
+          through intuitive user interfaces, robust backend logic, or innovative
+          hardware and embedded designs.
+
+
+## FOOTER ## 
+
+Skellefteå, Sweden
+
+Available for freelance or full-time roles
+
+Built with Next.js
+TypeScript, React, Tailwind CSS & Supabase 
+by Pontus Höglund
+
+## ABOUT ##
+
+About Me
+
+ Hi, I'm Pontus! I'm a web developer passionate about building
+ 
+beautiful, accessible, and performant web experiences. My journey
+started with curiosity for how things work on the internet, and has
+grown into a love for open source, sharing knowledge, and
+collaborating with others.
+
+
+On this site, you'll find my projects, blog posts, and thoughts on
+web development, TypeScript, and the ever-evolving world of frontend
+technologies. I believe in continuous learning and enjoy helping
+others grow in their coding journey.
+
+When I'm not coding, you might find me exploring new tech,
+contributing to open source, or enjoying a good cup of coffee.
+Thanks for stopping by!
+
+Contact

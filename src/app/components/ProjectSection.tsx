@@ -37,10 +37,10 @@ export default function ProjectSection() {
   return (
     <section className="bg-bg py-12 px-4 rounded-lg shadow-md">
       <div className="flex flex-col items-center">
-        <h2 className="text-3xl font-bold text-center text-accent mb-6">
+        <h2 className="text-3xl font-bold text-center text-accent mb-6 2xl:text-6xl">
           My Projects
         </h2>
-        <p className="text-text text-center dark:text-neutral-300 mb-8 max-w-2xl">
+        <p className="text-text text-center mb-8 max-w-2xl 2xl:text-4xl">
           Here you'll find a range of projects that showcase my experience
           across various technologies and domains. From modern web development
           to embedded systems and creative hardware solutions, each project
@@ -56,18 +56,18 @@ export default function ProjectSection() {
         {projects.slice(0, 4).map((project) => (
           <li
             key={project.name + project.href}
-            className="bg-card-bg border border-border dark:border-neutral-700 rounded-lg p-6 transition hover:shadow-lg hover:border-accent"
+            className="bg-card-bg border border-border  rounded-lg p-6 transition hover:shadow-lg hover:border-accent"
           >
             <Link href={project.href} className="group block h-full">
-              <h3 className="text-xl font-semibold text-text">
+              <h3 className="text-xl font-semibold text-text 2xl:text-5xl">
                 {project.name}
               </h3>
-              <p className="text-neutral-700 dark:text-text-300 mt-2">
+              <p className="text-neutral-700  2xl:text-3xl mt-2">
                 {project.description}
               </p>
               <button
                 type="button"
-                className="inline-block mt-4 px-4 py-2 rounded bg-accent text-white font-medium transition group-hover:underline group-hover:bg-hoverlink"
+                className="inline-block 2xl:text-3xl mt-4 2xl:px-6 2xl:py-4 px-4 py-2 rounded bg-accent text-white font-medium transition group-hover:underline group-hover:bg-hoverlink 2xl:rounded-lg"
               >
                 View Project &rarr;
               </button>

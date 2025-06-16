@@ -89,6 +89,7 @@ export default function ProjectsPage() {
                                 hover:border-accent
                                 hover:shadow-[0_4px_16px_rgba(216,58,58,0.08)]
                                 min-h-[320px]
+                                group block
                             `}
               style={{ minWidth: "320px" }}
             >

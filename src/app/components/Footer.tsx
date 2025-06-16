@@ -2,24 +2,24 @@ import { Mail, MapPin, Github, Linkedin } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-footer text-white py-10 px-4">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-6 text-sm text-center md:text-left">
+    <footer className="bg-footer text-white py-10 2xl:py-20 px-4">
+      <div className="container 2xl:text-3xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-6 text-sm text-center md:text-left">
         {/* Contact Info */}
         <div className="space-y-2">
           <div className="flex items-center justify-center md:justify-start space-x-2 group transition duration-300">
             <Mail
               size={16}
-              className="group-hover:text-gray-100 transition duration-300"
+              className="group-hover:text-gray-100 transition duration-300 2xl:h-7 2xl:w-7"
             />
             <a
               href="mailto:you@example.com"
               className="relative underline-offset-4 hover:text-gray-100 hover:underline transition-all duration-300"
             >
-              you@example.com
+              hoegge1@hotmail.com
             </a>
           </div>
           <div className="flex items-center justify-center md:justify-start space-x-2">
-            <MapPin size={16} />
+            <MapPin size={16} className="2xl:h-7 2xl:w-7" />
             <span>Skellefteå, Sweden</span>
           </div>
           <p className="pt-1">Available for freelance or full-time roles</p>
@@ -35,7 +35,7 @@ const Footer = () => {
           >
             <Github
               size={16}
-              className="transition duration-300 group-hover:text-gray-100"
+              className="transition duration-300 group-hover:text-gray-100 2xl:h-7 2xl:w-7"
             />
             <span className="relative after:block after:h-[2px] after:bg-white after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:origin-left after:duration-300">
               GitHub
@@ -49,7 +49,7 @@ const Footer = () => {
           >
             <Linkedin
               size={16}
-              className="transition duration-300 group-hover:text-gray-100"
+              className="transition duration-300 group-hover:text-gray-100 2xl:h-7 2xl:w-7"
             />
             <span className="relative after:block after:h-[2px] after:bg-white after:scale-x-0 group-hover:after:scale-x-100 after:transition-transform after:origin-left after:duration-300">
               LinkedIn
