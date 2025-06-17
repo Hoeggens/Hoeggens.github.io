@@ -26,6 +26,7 @@ const PROJECT_SECTION_TEXT_SWE = {
     "hårdvara och inbyggda system.",
   HEADER: "Mina projekt",
   RECENT: "Här är några av de projekt jag jobbat med nyligen.",
+  VIEW_ALL: "Kolla in alla projekt",
 };
 
 // FOOTER_TEXT

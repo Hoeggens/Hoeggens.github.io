@@ -60,6 +60,9 @@ export default function ProjectSection() {
           {text.ADDITIONAL}
         </p>
       </div>
+      <div className="flex flex-col text-center justify-center md:items-end md:justify-end w-full mb-6 md:pr-8 lg:pr-24 text-accent font-semibold text-lg 2xl:text-3xl">
+        {text.VIEW_ALL} &rarr;
+      </div>
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {projects.slice(0, 4).map((project) => (
           <li

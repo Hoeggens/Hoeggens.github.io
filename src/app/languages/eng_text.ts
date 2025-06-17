@@ -27,6 +27,7 @@ const PROJECT_SECTION_TEXT_ENG = {
         "hardware and embedded designs.",
     HEADER: "My projects",
     RECENT: "Here are some of the projects I've worked on recently.",
+    VIEW_ALL: "View all projects",
 };
 
 // FOOTER_TEXT
