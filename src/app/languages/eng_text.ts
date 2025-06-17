@@ -41,9 +41,9 @@ const FOOTER_TEXT_ENG = {
 // ABOUT_SECTION_TEXT
 const ABOUT_SECTION_TEXT_ENG = {
     TITLE: "About Me",
-    INTRO: "Hi, I'm Pontus! I'm a web developer passionate about building",
     DESCRIPTION:
-        "beautiful, accessible, and performant web experiences. My journey " +
+        "Hi, I'm Pontus! I'm a web developer passionate about building" +
+        "awesome, accessible, and performant web experiences. My journey " +
         "started with curiosity for how things work on the internet, and has " +
         "grown into a love for open source, sharing knowledge, and " +
         "collaborating with others.",

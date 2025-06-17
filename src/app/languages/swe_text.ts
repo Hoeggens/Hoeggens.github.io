@@ -40,9 +40,9 @@ const FOOTER_TEXT_SWE = {
 // ABOUT_SECTION_TEXT
 const ABOUT_SECTION_TEXT_SWE = {
   TITLE: "Om Mig",
-  INTRO: "Hej, jag är Pontus! Jag är en webb­utvecklare som brinner för att bygga",
   DESCRIPTION:
-    "vackra, tillgängliga och högpresterande webbupplevelser. Min resa " +
+    "Hej, jag heter Pontus! Jag är en systemutvecklare som brinner för att bygga" +
+    "grymma, tillgängliga och högpresterande projekt. Min resa " +
     "började med en nyfikenhet kring hur saker fungerar på internet, och har " +
     "växt till en kärlek för open source, kunskapsdelning och " +
     "samarbete med andra.",
