@@ -1,5 +1,9 @@
 "use client";
 import React from "react";
+import ProjectButton from "../components/ProjectButton";
+import { PROJECT_SECTION_TEXT_SWE } from "../languages/swe_text";
+import { PROJECT_SECTION_TEXT_ENG } from "../languages/eng_text";
+import { useLanguage } from "../lib/LanguageProvider";
 
 const projects = [
   {
@@ -59,50 +63,40 @@ const projects = [
 ];
 
 export default function ProjectsPage() {
+  const { language } = useLanguage();
+  let text;
+  if (language === "sv") {
+    text = PROJECT_SECTION_TEXT_SWE;
+  } else {
+    text = PROJECT_SECTION_TEXT_ENG;
+  }
+
   return (
     <main className="bg-bg min-h-screen pb-16 py-28">
-      <div className="max-w-3xl mx-auto px-6">
-        <h1 className="text-accent text-center text-4xl font-bold mb-2 tracking-tight">
-          My projects
+      <div className="max-w-3xl mx-auto px-6 2xl:max-w-6xl">
+        <h1 className="text-accent text-center text-4xl font-bold mb-2 tracking-tight md:text-5xl 2xl:text-6xl">
+          {text.HEADER}
         </h1>
-        <p className="text-text text-center mb-10">
-          Here are some of the projects I've worked on recently.
+        <p className="text-text text-center mb-10  2xl:text-3xl">
+          {text.RECENT}
         </p>
-        <div className="grid gap-x-72 gap-y-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
+        <div className="grid sm:gap-x-12 md:gap-x-24 lg:gap-x-72 gap-x-72 gap-y-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {projects.map((project) => (
             <a
               key={project.title}
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`
-                                bg-card-bg
-                                border border-border
-                                rounded-2xl
-                                shadow-[0_2px_8px_rgba(60,60,60,0.04)]
-                                p-12
-                                flex flex-col gap-8
-                                text-text
-                                no-underline
-                                transition
-                                duration-200
-                                hover:border-accent
-                                hover:shadow-[0_4px_16px_rgba(216,58,58,0.08)]
-                                min-h-[320px]
-                            `}
-              style={{ minWidth: "320px" }}
+              className="bg-card-bg border border-border rounded-2xl shadow-md p-8 flex flex-col gap-6 text-text no-underline transition duration-200 hover:border-accent hover:shadow-lg min-h-[320px] min-w-[320px] 2xl:min-h-[540px] 2xl:min-w-[440px] group block"
             >
-              <h2 className="text-accent text-2xl font-semibold m-0">
+              <h2 className="text-accent text-2xl font-semibold 2xl:text-4xl">
                 {project.title}
               </h2>
-              <p className="text-text text-lg m-0">{project.description}</p>
+              <p className="text-text text-lg 2xl:text-3xl">
+                {project.description}
+              </p>
               <div className="mt-auto">
-                <button
-                  type="button"
-                  className="inline-block w-full px-5 py-3 rounded bg-accent text-white font-medium transition group-hover:underline group-hover:bg-hoverlink text-base"
-                >
-                  View Project &rarr;
-                </button>
+                <ProjectButton />
               </div>
             </a>
           ))}

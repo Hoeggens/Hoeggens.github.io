@@ -1,8 +1,14 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import LanguageSwitch from "./languageSwitch";
+import { useLanguage } from "../lib/LanguageProvider";
+import { NAVBAR_LABELS_SWE } from "../languages/swe_text";
+import { NAVBAR_LABELS_ENG } from "../languages/eng_text";
+import { getSlugs } from "../lib/Slug-map";
 
 const Navbar = () => {
+  const { language } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -23,19 +29,31 @@ const Navbar = () => {
   const underlineStyles =
     "after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-text after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300";
 
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
-    { href: "/my-projects", label: "My Projects" },
-  ];
+  let links: { href: string; label: string }[] = [];
+
+  const hrefs = getSlugs(language);
+  if (language === "sv") {
+    const labels = Object.values(NAVBAR_LABELS_SWE);
+    links = labels.map((label, idx) => ({
+      href: hrefs[idx],
+      label,
+    }));
+  } else {
+    const labels = Object.values(NAVBAR_LABELS_ENG);
+    links = labels.map((label, idx) => ({
+      href: hrefs[idx],
+      label,
+    }));
+  }
 
   return (
     <nav
       className={`
         transition-all duration-500 ease-in-out
         fixed top-0 left-0 w-full z-30 bg-bg opacity-90
-        ${isScrolled ? "py-2" : "py-6"}
+        ${
+          isScrolled ? "pt-2 pb-2 " : "pt-6 pb-6 2xl:pt-8 2xl:pb-8"
+        } border-b border-accent/50
       `}
     >
       <div className="w-full px-6 flex justify-between items-center md:justify-between">
@@ -84,12 +102,12 @@ const Navbar = () => {
           <img
             src="/svg/eph_colored_icon.svg"
             alt="Logo"
-            className="h-14 w-14 md:h-10 md:w-10 transition-all duration-300"
+            className="h-14 w-14 md:h-10 md:w-10 lg:h-12 lg:w-12 2xl:h-16 2xl:w-16 transition-all duration-300"
           />
         </a>
         {/* Desktop Links */}
         <div className="flex-1 flex justify-center">
-          <ul className="hidden md:flex space-x-24 text-lg font-semibold">
+          <ul className="hidden md:flex space-x-16 lg:space-x-24 xl:space-x-36 2xl:space-x-64 xl:text-xl  2xl:text-3xl text-lg font-semibold">
             {links.map((link) => (
               <li key={link.href}>
                 <Link
@@ -105,11 +123,14 @@ const Navbar = () => {
         </div>
         {/* Spacer for mobile to balance hamburger and logo */}
         <div className="w-8 h-8 md:hidden" />
+        <div className="hidden sm:block">
+          <LanguageSwitch />
+        </div>
       </div>
       {/* Mobile Dropdown */}
       <div
         className={`
-          md:hidden bg-bg px-6 pb-4 pt-2 transition-all duration-300
+          md:hidden bg-bg px-6 pt-2 transition-all duration-300
           ${
             menuOpen
               ? "max-h-96 opacity-100"
@@ -118,19 +139,24 @@ const Navbar = () => {
         `}
         style={{ transitionProperty: "max-height, opacity" }}
       >
-        <ul className="flex flex-col space-y-4 text-lg font-semibold pl-4">
-          {links.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={`${navLinkStyles} ${underlineStyles}`}
-                onClick={() => setMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-row items-center justify-between space-x-4">
+          <ul className="grid grid-cols-2 gap-x-0 gap-y-10 text-lg font-semibold pl-0 mb-0 justify-items-center w-full">
+            {links.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`${navLinkStyles} ${underlineStyles}`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-6 flex justify-end sm:hidden">
+          <LanguageSwitch />
+        </div>
       </div>
     </nav>
   );

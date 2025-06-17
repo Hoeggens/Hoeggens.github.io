@@ -18,6 +18,9 @@ module.exports = {
         border: 'var(--color-border)',
         hoverlink: 'var(--color-hoverlink)',
       },
+      screens: {
+        '2xl': '2200px',
+      },
     },
   },
   plugins: [],
