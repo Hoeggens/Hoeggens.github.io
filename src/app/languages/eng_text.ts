@@ -10,7 +10,7 @@ const NAVBAR_LABELS_ENG = {
 const HERO_SECTION_TEXT_ENG = {
     INTRO: "Hi, I'm Eric Pontus Höglund!",
     SUBTITLE: "Newly graduated and passionate developer!",
-    DESCRIPTION: "Eager to build awesome and functional experiences.",
+    DESCRIPTION: "Eager to build awesome and functional things and experiences.",
 };
 
 // PROJECT_SECTION_TEXT
@@ -42,21 +42,24 @@ const FOOTER_TEXT_ENG = {
 // ABOUT_SECTION_TEXT
 const ABOUT_SECTION_TEXT_ENG = {
     TITLE: "About Me",
-    DESCRIPTION:
-        "Hi, I'm Pontus! I'm a web developer passionate about building" +
-        "awesome, accessible, and performant web experiences. My journey " +
-        "started with curiosity for how things work on the internet, and has " +
-        "grown into a love for open source, sharing knowledge, and " +
-        "collaborating with others.",
-    CONTINUATION:
-        "On this site, you'll find my projects, blog posts, and thoughts on " +
-        "web development, TypeScript, and the ever-evolving world of frontend " +
-        "technologies. I believe in continuous learning and enjoy helping " +
-        "others grow in their coding journey.",
-    PERSONAL:
-        "When I'm not coding, you might find me exploring new tech, " +
-        "contributing to open source, or enjoying a good cup of coffee. " +
-        "Thanks for stopping by!",
+  DESCRIPTION:
+  "Hi, my name is Pontus! I'm a software developer who’s passionate about building " +
+  "awesome, efficient, and modern solutions, ideally with high performance and smart architecture. " +
+  "My journey began in 2022 when I studied Programming 1 and 2 at adult education (Komvux), which really sparked my interest. " +
+  "After that, I completed an intensive bootcamp at Academic Work Academy focused on C# and .NET, followed by a two-year program " +
+  "at Chas Academy, where I recently graduated as a C/C++ software developer! " +
+  "Since then, my passion has grown into a love for building all kinds of projects, sharing knowledge, and collaborating with others.",
+
+  CONTINUATION:
+  "On this site, you'll find my projects, posts, and thoughts about " +
+  "my biggest hobby, software development and the ever-evolving world of technology. " +
+  "I believe in continuous learning and enjoy helping others grow on their coding journey.",
+
+  PERSONAL:
+  "When I'm not coding, you'll probably find me exploring new tech, " +
+  "working on a side project, or enjoying a good cup of coffee. " +
+  "Thanks for stopping by!",
+
     CONTACT: "Contact",
 };
 

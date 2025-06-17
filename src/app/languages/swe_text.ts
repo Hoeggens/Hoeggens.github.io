@@ -9,7 +9,7 @@ const NAVBAR_LABELS_SWE = {
 const HERO_SECTION_TEXT_SWE = {
   INTRO: "Hej, jag heter Eric Pontus Höglund!",
   SUBTITLE: "Nyutexaminerad och passionerad utvecklare!",
-  DESCRIPTION: "Ivrig att skapa grymma och funktionella upplevelser.",
+  DESCRIPTION: "Ivrig att skapa grymma och funktionella saker och upplevelser.",
 };
 
 // PROJECT_SECTION_TEXT
@@ -42,20 +42,24 @@ const FOOTER_TEXT_SWE = {
 const ABOUT_SECTION_TEXT_SWE = {
   TITLE: "Om Mig",
   DESCRIPTION:
-    "Hej, jag heter Pontus! Jag är en systemutvecklare som brinner för att bygga " +
-    "grymma, tillgängliga och högpresterande projekt. Min resa " +
-    "började med en nyfikenhet kring hur saker fungerar på internet, och har " +
-    "växt till en kärlek för open source, kunskapsdelning och " +
-    "samarbete med andra.",
+  "Hej, jag heter Pontus! Jag är en systemutvecklare som brinner för att bygga " +
+  "grymma, effektiva och moderna lösningar, gärna med hög prestanda och smart arkitektur. " +
+  "Min resa började 2022 när jag läste Programmering 1 och 2 på Komvux vilket väckte mitt intresse på riktigt. " +
+  "Därefter gick jag en intensivutbildning på Academic Work Academy inom C# och .NET, följt av en tvåårig utbildning " +
+  "på Chas Academy där jag precis tagit examen som systemutvecklare inom C/C++! " +
+  "Sedan dess har min passion vuxit till en kärlek för att bygga olika sorters projekt, kunskapsdelning och " +
+  "samarbete med andra.",
+
   CONTINUATION:
-    "På den här sidan hittar du mina projekt, blogginlägg och tankar om " +
-    "webbutveckling, TypeScript och den ständigt föränderliga världen av frontend- " +
-    "teknologier. Jag tror på kontinuerligt lärande och tycker om att hjälpa " +
-    "andra växa i sin kodningsresa.",
+  "På den här sidan hittar du mina projekt, inlägg och tankar om " +
+  "min stora hobby, utveckling! Och den ständigt föränderliga världen av teknologi. " +
+  "Jag tror på kontinuerligt lärande och tycker om att hjälpa " +
+  "andra att växa i sin kodningsresa.",
+
   PERSONAL:
-    "När jag inte kodar kan du kanske hitta mig utforska ny teknik, " +
-    "bidra till open source eller njuta av en god kopp kaffe. " +
-    "Tack för att du tittade förbi!",
+  "När jag inte kodar kan du kanske hitta mig utforska ny teknik, " +
+  "hålla på med ett nytt projekt eller njuta av en god kopp kaffe. " +
+  "Tack för att du tittade förbi!",
   CONTACT: "Kontakt",
 };
 
