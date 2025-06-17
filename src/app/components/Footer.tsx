@@ -1,6 +1,17 @@
+"use client";
 import { Mail, MapPin, Github, Linkedin } from "lucide-react";
+import { FOOTER_TEXT_SWE } from "../languages/swe_text";
+import { FOOTER_TEXT_ENG } from "../languages/eng_text";
+import { useLanguage } from "../lib/LanguageProvider";
 
 const Footer = () => {
+  const { language } = useLanguage();
+  let text;
+  if (language === "sv") {
+    text = FOOTER_TEXT_SWE;
+  } else {
+    text = FOOTER_TEXT_ENG;
+  }
   return (
     <footer className="bg-footer text-white py-10 2xl:py-20 px-4">
       <div className="container 2xl:text-3xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-6 text-sm text-center md:text-left">
@@ -20,9 +31,9 @@ const Footer = () => {
           </div>
           <div className="flex items-center justify-center md:justify-start space-x-2">
             <MapPin size={16} className="2xl:h-7 2xl:w-7" />
-            <span>Skellefteå, Sweden</span>
+            <span>Skellefteå, {text.LOCATION}</span>
           </div>
-          <p className="pt-1">Available for freelance or full-time roles</p>
+          <p className="pt-1">{text.AVAILABILITY}</p>
         </div>
 
         {/* Social Links */}
@@ -60,9 +71,9 @@ const Footer = () => {
         {/* Footer Note */}
         <div>
           <div className="flex flex-col space-y-1">
-            <span>Built with Next.js</span>
-            <span>TypeScript, React & Tailwind CSS</span>
-            <span>by Pontus Höglund</span>
+            <span>{text.BUILT_WITH}</span>
+            <span>{text.TECH_STACK}</span>
+            <span>{text.AUTHOR}</span>
           </div>
         </div>
       </div>

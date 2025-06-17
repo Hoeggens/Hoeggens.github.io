@@ -30,8 +30,8 @@ const PROJECT_SECTION_TEXT_SWE = {
 
 // FOOTER_TEXT
 const FOOTER_TEXT_SWE = {
-  LOCATION: "Skellefteå, Sverige",
-  AVAILABILITY: "Tillgänglig för frilans- eller heltidsuppdrag",
+  LOCATION: "Sverige",
+  AVAILABILITY: "Tillgänglig för jobb!",
   BUILT_WITH: "Byggt med Next.js",
   TECH_STACK: "TypeScript, React, Tailwind CSS & Supabase",
   AUTHOR: "av Pontus Höglund",
@@ -41,7 +41,7 @@ const FOOTER_TEXT_SWE = {
 const ABOUT_SECTION_TEXT_SWE = {
   TITLE: "Om Mig",
   DESCRIPTION:
-    "Hej, jag heter Pontus! Jag är en systemutvecklare som brinner för att bygga" +
+    "Hej, jag heter Pontus! Jag är en systemutvecklare som brinner för att bygga " +
     "grymma, tillgängliga och högpresterande projekt. Min resa " +
     "började med en nyfikenhet kring hur saker fungerar på internet, och har " +
     "växt till en kärlek för open source, kunskapsdelning och " +
@@ -60,15 +60,24 @@ const ABOUT_SECTION_TEXT_SWE = {
 
 // CONTACT_SECTION_TEXT
 const CONTACT_SECTION_TEXT_SWE = {
-  TITLE: "Hör av dig",
+  TITLE: "Kom i kontakt",
   DESCRIPTION: "Har du en fråga eller vill bara säga hej? Tveka inte att kontakta mig!",
-  LOCATION: "Skellefteå, Sverige",
+  LOCATION: "Sverige",
   SEND_EMAIL: "Skicka ett mejl",
   NAME_LABEL: "Namn",
   EMAIL_LABEL: "E-post",
   MESSAGE_LABEL: "Meddelande",
   SEND_BUTTON: "Skicka meddelande",
+  MESSAGE_SENT: "Meddelande skickats!",
 };
+const NOT_FOUND_PAGE_SWE = {
+    TITLE: "Sidan hittades inte",
+    DESCRIPTION: "Omdirigeras till",
+    DESCRIPTION2: "startsidan",
+    IN: "om",
+    SECONDS: "sekunder",
+    NOW: "Gå till startsidan nu",
+}
 
 export {
   NAVBAR_LABELS_SWE,
@@ -77,4 +86,5 @@ export {
   FOOTER_TEXT_SWE,
   ABOUT_SECTION_TEXT_SWE,
   CONTACT_SECTION_TEXT_SWE,
+  NOT_FOUND_PAGE_SWE
 };

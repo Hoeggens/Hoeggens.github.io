@@ -1,12 +1,22 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { CONTACT_SECTION_TEXT_SWE } from "../languages/swe_text";
+import { CONTACT_SECTION_TEXT_ENG } from "../languages/eng_text";
+import { useLanguage } from "../lib/LanguageProvider";
 
 const MAX_MESSAGE_LENGTH = 1000;
 
 export default function ContactPage() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const { language } = useLanguage();
+  let text;
+  if (language === "sv") {
+    text = CONTACT_SECTION_TEXT_SWE;
+  } else {
+    text = CONTACT_SECTION_TEXT_ENG;
+  }
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -29,10 +39,10 @@ export default function ContactPage() {
         {/* Heading */}
         <div className=" mb-12 ">
           <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-bold text-center text-accent md:mt-2 mt-8">
-            Get In Touch
+            {text.TITLE}
           </h1>
           <p className="text-text text-center sm:text-lg 2xl:text-4xl">
-            Have a question or just want to say hi? Please reach out to me!
+            {text.DESCRIPTION}
           </p>
         </div>
 
@@ -55,7 +65,7 @@ export default function ContactPage() {
                 Pontus Höglund
               </h2>
               <p className="text-base text-secondary-text mb-1 2xl:text-2xl">
-                Skellefteå, Sweden
+                Skellefteå, {text.LOCATION}
               </p>
               <a
                 href="mailto:pontus.hoglund@hoeggens.se"
@@ -78,7 +88,7 @@ export default function ContactPage() {
             className="bg-card-bg border border-border rounded-2xl p-8 shadow-lg flex flex-col gap-5 h-full justify-center"
           >
             <h1 className="text-accent text-4xl font-semibold text-center mb-24 2xl:text-5xl">
-              Send an email
+              {text.SEND_EMAIL}
             </h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -86,7 +96,7 @@ export default function ContactPage() {
                   className="block text-sm font-medium text-secondary-text mb-1 2xl:text-2xl"
                   htmlFor="name"
                 >
-                  Name
+                  {text.NAME_LABEL}
                 </label>
                 <input
                   id="name"
@@ -103,7 +113,7 @@ export default function ContactPage() {
                   className="block text-sm font-medium text-secondary-text mb-1 2xl:text-2xl"
                   htmlFor="email"
                 >
-                  Email
+                  {text.EMAIL_LABEL}
                 </label>
                 <input
                   id="email"
@@ -122,7 +132,7 @@ export default function ContactPage() {
                 className="block text-sm font-medium text-secondary-text mb-1 2xl:text-2xl"
                 htmlFor="message"
               >
-                Message
+                {text.MESSAGE_LABEL}
               </label>
               <textarea
                 id="message"
@@ -148,7 +158,7 @@ export default function ContactPage() {
                   : "hover:bg-hoverlink"
               }`}
             >
-              {submitted ? "Message Sent!" : "Send Message"}
+              {submitted ? text.SEND_BUTTON : text.MESSAGE_SENT}
             </button>
           </form>
         </div>

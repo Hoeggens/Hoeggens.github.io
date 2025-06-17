@@ -31,7 +31,7 @@ const PROJECT_SECTION_TEXT_ENG = {
 
 // FOOTER_TEXT
 const FOOTER_TEXT_ENG = {
-    LOCATION: "Skellefteå, Sweden",
+    LOCATION: "Sweden",
     AVAILABILITY: "Available for freelance or full-time roles",
     BUILT_WITH: "Built with Next.js",
     TECH_STACK: "TypeScript, React, Tailwind CSS & Supabase",
@@ -63,14 +63,23 @@ const ABOUT_SECTION_TEXT_ENG = {
 const CONTACT_SECTION_TEXT_ENG = {
     TITLE: "Get In Touch",
     DESCRIPTION: "Have a question or just want to say hi? Please reach out to me!",
-    LOCATION: "Skellefteå, Sweden",
+    LOCATION: "Sweden",
     SEND_EMAIL: "Send an email",
     NAME_LABEL: "Name",
     EMAIL_LABEL: "Email",
     MESSAGE_LABEL: "Message",
     SEND_BUTTON: "Send Message",
+    MESSAGE_SENT: "Message sent!",
 };
 
+const NOT_FOUND_PAGE_ENG = {
+    TITLE: "Page Not Found",
+    DESCRIPTION: "Redirecting to",
+    DESCRIPTION2: "homepage",
+    IN: "in",
+    SECONDS: "seconds",
+    NOW: "Go Home Now",
+}
 export {
   NAVBAR_LABELS_ENG,
   HERO_SECTION_TEXT_ENG,
@@ -78,4 +87,5 @@ export {
   FOOTER_TEXT_ENG,
   ABOUT_SECTION_TEXT_ENG,
   CONTACT_SECTION_TEXT_ENG,
+  NOT_FOUND_PAGE_ENG
 };

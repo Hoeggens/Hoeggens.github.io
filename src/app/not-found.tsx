@@ -4,10 +4,20 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { NOT_FOUND_PAGE_SWE } from "../app/languages/swe_text";
+import { NOT_FOUND_PAGE_ENG } from "../app/languages/eng_text";
+import { useLanguage } from "../app/lib/LanguageProvider";
 
 export default function NotFoundPage() {
   const [seconds, setSeconds] = useState(30);
   const router = useRouter();
+  const { language } = useLanguage();
+  let text;
+  if (language === "sv") {
+    text = NOT_FOUND_PAGE_SWE;
+  } else {
+    text = NOT_FOUND_PAGE_ENG;
+  }
 
   useEffect(() => {
     if (seconds === 0) {
@@ -37,17 +47,18 @@ export default function NotFoundPage() {
         className="text-2xl font-semibold mt-0 transition-all duration-700"
         style={{ opacity: seconds === 0 ? 0.5 : 1 }}
       >
-        Page Not Found
+        {text.TITLE}
       </h2>
       <p
         className="my-6 text-lg transition-opacity duration-700"
         style={{ opacity: seconds === 0 ? 0.5 : 1 }}
       >
-        Redirecting to{" "}
+        {text.DESCRIPTION}{" "}
         <Link href="/" className="text-accent underline font-semibold">
-          homepage
+          {text.DESCRIPTION2}
         </Link>{" "}
-        in <span className="text-accent font-bold">{seconds}</span> seconds.
+        {text.IN} <span className="text-accent font-bold">{seconds}</span>{" "}
+        {text.SECONDS}.
       </p>
       <Link
         href="/"
@@ -57,7 +68,7 @@ export default function NotFoundPage() {
           pointerEvents: seconds === 0 ? "none" : "auto",
         }}
       >
-        Go Home Now
+        {text.NOW}
       </Link>
     </main>
   );
