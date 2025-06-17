@@ -2,14 +2,13 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import LanguageSwitch from "./languageSwitch";
-
-const languages = [
-  { code: "en", label: "English" },
-  { code: "sv", label: "Svenska" },
-  // Add more languages as needed
-];
+import { useLanguage } from "../lib/LanguageProvider";
+import { NAVBAR_LABELS_SWE } from "../languages/swe_text";
+import { NAVBAR_LABELS_ENG } from "../languages/eng_text";
+import { getSlugs } from "../lib/Slug-map";
 
 const Navbar = () => {
+  const { language } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -30,19 +29,31 @@ const Navbar = () => {
   const underlineStyles =
     "after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-full after:bg-text after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform after:duration-300";
 
-  const links = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
-    { href: "/my-projects", label: "My Projects" },
-  ];
+  let links: { href: string; label: string }[] = [];
+
+  const hrefs = getSlugs(language);
+  if (language === "sv") {
+    const labels = Object.values(NAVBAR_LABELS_SWE);
+    links = labels.map((label, idx) => ({
+      href: hrefs[idx],
+      label,
+    }));
+  } else {
+    const labels = Object.values(NAVBAR_LABELS_ENG);
+    links = labels.map((label, idx) => ({
+      href: hrefs[idx],
+      label,
+    }));
+  }
 
   return (
     <nav
       className={`
         transition-all duration-500 ease-in-out
         fixed top-0 left-0 w-full z-30 bg-bg opacity-90
-        ${isScrolled ? "py-2" : "py-6 2xl:py-4"}
+        ${
+          isScrolled ? "pt-2 pb-2 " : "pt-6 pb-6 2xl:pt-8 2xl:pb-8"
+        } border-b border-accent/50
       `}
     >
       <div className="w-full px-6 flex justify-between items-center md:justify-between">

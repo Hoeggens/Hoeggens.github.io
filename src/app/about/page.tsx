@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function AboutPage() {
   return (
     <div className="max-w-4xl 2xl:max-w-6xl 2xl:text-4xl w-full mx-auto mt-12 mb-12 px-4 py-20">
-      <h1 className="text-4xl font-bold mb-6 text-accent text-center 2xl:text-6xl">
+      <h1 className="text-4xl font-bold mb-6 text-accent text-center md:text-5xl 2xl:text-6xl">
         About Me
       </h1>
       <main className="bg-background rounded-2xl shadow-lg font-sans p-0 overflow-hidden">
@@ -26,13 +26,13 @@ export default function AboutPage() {
             grown into a love for open source, sharing knowledge, and
             collaborating with others.
           </p>
-          <p className="text-base text-text mb-6 2xl:text-3xl">
+          <p className="text-lg text-text mb-6 2xl:text-3xl">
             On this site, you'll find my projects, blog posts, and thoughts on
             web development, TypeScript, and the ever-evolving world of frontend
             technologies. I believe in continuous learning and enjoy helping
             others grow in their coding journey.
           </p>
-          <p className="text-base text-text mb-8 2xl:text-3xl">
+          <p className="text-lg text-text mb-8 2xl:text-3xl">
             When I'm not coding, you might find me exploring new tech,
             contributing to open source, or enjoying a good cup of coffee.
             Thanks for stopping by!

@@ -1,4 +1,9 @@
+"use client";
 import Link from "next/link";
+import ProjectButton from "./ProjectButton";
+import { PROJECT_SECTION_TEXT_SWE } from "../languages/swe_text";
+import { PROJECT_SECTION_TEXT_ENG } from "../languages/eng_text";
+import { useLanguage } from "../lib/LanguageProvider";
 
 const projects = [
   {
@@ -34,22 +39,25 @@ const projects = [
 ];
 
 export default function ProjectSection() {
+  const { language } = useLanguage();
+  let text;
+  if (language === "sv") {
+    text = PROJECT_SECTION_TEXT_SWE;
+  } else {
+    text = PROJECT_SECTION_TEXT_ENG;
+  }
+
   return (
     <section className="bg-bg py-12 px-4 rounded-lg shadow-md">
       <div className="flex flex-col items-center">
         <h2 className="text-3xl font-bold text-center text-accent mb-6 2xl:text-6xl">
-          My Projects
+          {text.TITLE}
         </h2>
         <p className="text-text text-center mb-8 max-w-2xl 2xl:text-4xl">
-          Here you'll find a range of projects that showcase my experience
-          across various technologies and domains. From modern web development
-          to embedded systems and creative hardware solutions, each project
-          highlights different skills and problem-solving approaches.
+          {text.DESCRIPTION}
           <br />
           <br />
-          Explore these examples to see how I bring ideas to life—whether
-          through intuitive user interfaces, robust backend logic, or innovative
-          hardware and embedded designs.
+          {text.ADDITIONAL}
         </p>
       </div>
       <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -65,12 +73,7 @@ export default function ProjectSection() {
               <p className="text-neutral-700  2xl:text-3xl mt-2">
                 {project.description}
               </p>
-              <button
-                type="button"
-                className="inline-block 2xl:text-3xl mt-4 2xl:px-6 2xl:py-4 px-4 py-2 rounded bg-accent text-white font-medium transition group-hover:underline group-hover:bg-hoverlink 2xl:rounded-lg"
-              >
-                View Project &rarr;
-              </button>
+              <ProjectButton />
             </Link>
           </li>
         ))}

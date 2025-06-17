@@ -1,17 +1,19 @@
+"use client";
+
 import React, { useState, useRef, useEffect } from "react";
+import { useLanguage } from "../lib/LanguageProvider";
+import cookies from "js-cookie";
 
 const flagSrc = (code: string) => `/svg/flags/${code}.svg`;
 
 const languages = [
-  { code: "en", label: "English" },
   { code: "sv", label: "Svenska" },
+  { code: "eng", label: "English" },
 ];
 
-const DROPDOWN_WIDTH = 150; // px
-
 const LanguageSwitch: React.FC = () => {
+  const { language, setLanguage } = useLanguage();
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState("en");
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -25,11 +27,18 @@ const LanguageSwitch: React.FC = () => {
   }, [open]);
 
   const handleSelect = (code: string) => {
-    setSelected(code);
+    if (code === language) return;
+    setLanguage(code);
     setOpen(false);
+    cookies.set("languageCookie", code, {
+      secure: true,
+      sameSite: "strict",
+    });
+    window.location.reload();
   };
 
-  const selectedLang = languages.find((l) => l.code === selected)!;
+  const selectedLang =
+    languages.find((lang) => lang.code === language) || languages[0];
 
   return (
     <div ref={ref} className="relative inline-block">
@@ -63,7 +72,7 @@ const LanguageSwitch: React.FC = () => {
           "
         >
           {languages.map((lang, idx) => {
-            const isSelected = lang.code === selected;
+            const isSelected = lang.code === language;
             const roundedClass =
               idx === 0
                 ? "rounded-t-lg"
