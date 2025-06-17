@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { cookies } from "next/headers";
 import LanguageProviderWrapper from "./lib/LanguageProviderWrapper";
+import InProgressPopup from "./components/InProgressPopup";
 
 export const metadata = {
   icons: {
@@ -22,6 +23,7 @@ export default async function RootLayout({
     <html lang={languageCookie}>
       <body className="bg-bg text-text font-sans antialiased">
         <LanguageProviderWrapper initialLanguage={languageCookie}>
+          <InProgressPopup />
           <Navbar />
           {children}
           <Footer />

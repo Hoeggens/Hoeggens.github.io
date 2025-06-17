@@ -84,6 +84,14 @@ const NOT_FOUND_PAGE_ENG = {
     SECONDS: "seconds",
     NOW: "Go Home Now",
 }
+
+const WORK_IN_PROGRESS_ENG = {
+    TITLE: "Work In Progress",
+    DESCRIPTION: "This website is a work in progress portfolio.",
+    CLARIFICATION: "Just to be clear what you are looking at!",
+    CLOSE: "Close the window to continue!",
+};
+
 export {
   NAVBAR_LABELS_ENG,
   HERO_SECTION_TEXT_ENG,
@@ -91,5 +99,6 @@ export {
   FOOTER_TEXT_ENG,
   ABOUT_SECTION_TEXT_ENG,
   CONTACT_SECTION_TEXT_ENG,
-  NOT_FOUND_PAGE_ENG
+  NOT_FOUND_PAGE_ENG,
+  WORK_IN_PROGRESS_ENG
 };

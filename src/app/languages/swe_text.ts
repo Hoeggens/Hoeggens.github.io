@@ -84,6 +84,13 @@ const NOT_FOUND_PAGE_SWE = {
     NOW: "Gå till startsidan nu",
 }
 
+const WORK_IN_PROGRESS_SWE = {
+  TITLE: "Arbete pågår",
+  DESCRIPTION: "Denna webbplats ska bli en portfolio.",
+  CLARIFICATION: "Bara så att du vet vad du tittar på!",
+  CLOSE: "Stäng fönstret för att fortsätta!",
+};
+
 export {
   NAVBAR_LABELS_SWE,
   HERO_SECTION_TEXT_SWE,
@@ -91,5 +98,6 @@ export {
   FOOTER_TEXT_SWE,
   ABOUT_SECTION_TEXT_SWE,
   CONTACT_SECTION_TEXT_SWE,
-  NOT_FOUND_PAGE_SWE
+  NOT_FOUND_PAGE_SWE,
+  WORK_IN_PROGRESS_SWE
 };
