@@ -7,7 +7,7 @@ import { useLanguage } from "../lib/LanguageProvider";
 const Footer = () => {
   const { language } = useLanguage();
   let text;
-  if (language === process.env.NEXT_PUBLIC_SWEDISH) {
+  if (language === "sv") {
     text = FOOTER_TEXT_SWE;
   } else {
     text = FOOTER_TEXT_ENG;

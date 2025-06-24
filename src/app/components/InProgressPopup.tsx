@@ -37,7 +37,7 @@ const InProgressPopup: React.FC = () => {
 
   const language = useLanguage();
   let text;
-  if (language.language === process.env.NEXT_PUBLIC_SWEDISH) {
+  if (language.language === "sv") {
     text = WORK_IN_PROGRESS_SWE;
   } else {
     text = WORK_IN_PROGRESS_ENG;

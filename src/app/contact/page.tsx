@@ -12,7 +12,7 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const { language } = useLanguage();
   let text;
-  if (language === process.env.NEXT_PUBLIC_SWEDISH) {
+  if (language === "sv") {
     text = CONTACT_SECTION_TEXT_SWE;
   } else {
     text = CONTACT_SECTION_TEXT_ENG;

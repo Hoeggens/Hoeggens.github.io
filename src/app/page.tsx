@@ -6,8 +6,7 @@ import { cookies } from "next/headers";
 
 export default async function Home() {
   const cookieStore = await cookies();
-  const language =
-    cookieStore.get(process.env.LANGUAGECOOKIE)?.value || process.env.SWEDISH;
+  const language = cookieStore.get("languageCookie")?.value || "sv";
 
   const projectz = await withdrawProjectData(language);
 

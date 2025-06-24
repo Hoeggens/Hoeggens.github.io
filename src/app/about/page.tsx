@@ -9,7 +9,7 @@ import { useLanguage } from "../lib/LanguageProvider";
 export default function AboutPage() {
   const { language } = useLanguage();
   let text;
-  if (language === process.env.NEXT_PUBLIC_SWEDISH) {
+  if (language === "sv") {
     text = ABOUT_SECTION_TEXT_SWE;
   } else {
     text = ABOUT_SECTION_TEXT_ENG;

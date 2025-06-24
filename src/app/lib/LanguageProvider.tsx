@@ -38,7 +38,7 @@ export default function LanguageProvider({
 
   const setLanguage = (lang: string) => {
     setLanguageState(lang);
-    Cookies.set(process.env.NEXT_PUBLIC_LANGUAGECOOKIE, lang, {
+    Cookies.set("languageCookie", lang, {
       secure: true,
       sameSite: "strict",
       path: "/",
@@ -46,7 +46,7 @@ export default function LanguageProvider({
   };
 
   useEffect(() => {
-    const cookieLang = Cookies.get(process.env.NEXT_PUBLIC_LANGUAGECOOKIE);
+    const cookieLang = Cookies.get("languageCookie");
     if (cookieLang && cookieLang !== language) {
       setLanguageState(cookieLang);
     }

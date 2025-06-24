@@ -30,7 +30,7 @@ const LanguageSwitch: React.FC = () => {
     if (code === language) return;
     setLanguage(code);
     setOpen(false);
-    cookies.set(process.env.NEXT_PUBLIC_LANGUAGECOOKIE, code, {
+    cookies.set("languageCookie", code, {
       secure: true,
       sameSite: "strict",
     });

@@ -21,7 +21,7 @@ interface Props {
 export default function ProjectSection({ projects }: Props) {
   const { language } = useLanguage();
   let text;
-  if (language === process.env.NEXT_PUBLIC_SWEDISH) {
+  if (language === "sv") {
     text = PROJECT_SECTION_TEXT_SWE;
   } else {
     text = PROJECT_SECTION_TEXT_ENG;
