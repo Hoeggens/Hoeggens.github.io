@@ -4,7 +4,7 @@ import { getSlugs } from './app/lib/Slug-map';
 export function middleware(req: NextRequest) {
     const url = req.nextUrl.clone();
     const [, lang, slug, ...rest] = url.pathname.split('/');
-    const cookieLang = req.cookies.get('languageCookie')?.value || 'sv';
+    const cookieLang = req.cookies.get(process.env.NEXT_PUBLIC_LANGUAGECOOKIE)?.value || 'sv';
     
     if (!lang) {
         url.pathname = `/${cookieLang}`;
@@ -48,6 +48,6 @@ export function middleware(req: NextRequest) {
     }
     
     const response = NextResponse.rewrite(url);
-    response.cookies.set('languageCookie', lang, { secure: true, sameSite: "strict", path: "/" });
+    response.cookies.set(process.env.NEXT_PUBLIC_LANGUAGECOOKIE, lang, { secure: true, sameSite: "strict", path: "/" });
     return response;
 }

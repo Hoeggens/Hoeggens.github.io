@@ -18,7 +18,8 @@ export default async function RootLayout({
 }) {
   const cookieStore = await cookies();
   const languageCookie =
-    cookieStore.get("languageCookie")?.value || process.env.NEXT_PUBLIC_SWEDISH;
+    cookieStore.get(process.env.NEXT_PUBLIC_LANGUAGECOOKIE)?.value ||
+    process.env.NEXT_PUBLIC_SWEDISH;
 
   return (
     <html lang={languageCookie}>
