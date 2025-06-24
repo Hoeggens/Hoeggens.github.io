@@ -8,7 +8,7 @@ const HeroSection = () => {
 
   let text;
 
-  if (language === process.env.swedish) {
+  if (language === process.env.NEXT_PUBLIC_SWEDISH) {
     text = HERO_SECTION_TEXT_SWE;
   } else {
     text = HERO_SECTION_TEXT_ENG;

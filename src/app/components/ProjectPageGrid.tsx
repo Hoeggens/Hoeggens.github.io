@@ -20,7 +20,7 @@ interface Props {
 function ProjectPageGrid({ projects }: Props) {
   const { language } = useLanguage();
   let text;
-  if (language === process.env.swedish) {
+  if (language === process.env.NEXT_PUBLIC_SWEDISH) {
     text = PROJECT_SECTION_TEXT_SWE;
   } else {
     text = PROJECT_SECTION_TEXT_ENG;
