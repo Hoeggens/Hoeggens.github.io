@@ -1,17 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getSlugs } from './app/lib/Slug-map';
+import { getSlugs } from './app/lib/getSlugsServer';
 
 export function middleware(req: NextRequest) {
     const url = req.nextUrl.clone();
     const [, lang, slug, ...rest] = url.pathname.split('/');
-    const cookieLang = req.cookies.get(process.env.NEXT_PUBLIC_LANGUAGECOOKIE)?.value || process.env.NEXT_PUBLIC_SWEDISH;
+    const cookieLang = req.cookies.get(process.env.LANGUAGECOOKIE)?.value || process.env.SWEDISH;
     
     if (!lang) {
         url.pathname = `/${cookieLang}`;
         return NextResponse.redirect(url);
     }
     
-    if (lang !== process.env.NEXT_PUBLIC_SWEDISH && lang !== process.env.NEXT_PUBLIC_ENGLISH) {
+    if (lang !== process.env.SWEDISH && lang !== process.env.ENGLISH) {
         url.pathname = `/${cookieLang}/${lang}${slug ? '/' + [slug, ...rest].join('/') : ''}`;
         return NextResponse.redirect(url);
     }
@@ -33,9 +33,9 @@ export function middleware(req: NextRequest) {
         return NextResponse.redirect(url);
     }
     
-    if (slug && lang !== 'eng') {
+    if (slug && lang !== process.env.ENGLISH) {
         const langSlugs = getSlugs(lang);
-        const englishSlugs = getSlugs('eng');
+        const englishSlugs = getSlugs(process.env.ENGLISH);
         const slugIndex = langSlugs.indexOf(slug);
         
         if (slugIndex !== -1) {
@@ -48,6 +48,6 @@ export function middleware(req: NextRequest) {
     }
     
     const response = NextResponse.rewrite(url);
-    response.cookies.set(process.env.NEXT_PUBLIC_LANGUAGECOOKIE, lang, { secure: true, sameSite: "strict", path: "/" });
+    response.cookies.set(process.env.LANGUAGECOOKIE, lang, { secure: true, sameSite: "strict", path: "/" });
     return response;
 }

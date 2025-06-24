@@ -5,7 +5,7 @@ import LanguageSwitch from "./languageSwitch";
 import { useLanguage } from "../lib/LanguageProvider";
 import { NAVBAR_LABELS_SWE } from "../languages/swe_text";
 import { NAVBAR_LABELS_ENG } from "../languages/eng_text";
-import { getSlugs } from "../lib/Slug-map";
+import { getSlugs } from "../lib/getSlugsClient";
 
 const Navbar = () => {
   const { language } = useLanguage();
@@ -32,7 +32,7 @@ const Navbar = () => {
   let links: { href: string; label: string }[] = [];
 
   const hrefs = getSlugs(language);
-  if (language === "sv") {
+  if (language === process.env.NEXT_PUBLIC_SWEDISH) {
     const labels = Object.values(NAVBAR_LABELS_SWE);
     links = labels.map((label, idx) => ({
       href: hrefs[idx],
@@ -111,7 +111,7 @@ const Navbar = () => {
             {links.map((link) => (
               <li key={link.href}>
                 <Link
-                  href={link.href}
+                  href={`/${language}/${link.href}`}
                   className={`${navLinkStyles} ${underlineStyles}`}
                   onClick={() => setMenuOpen(false)}
                 >

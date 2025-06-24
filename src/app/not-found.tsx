@@ -13,7 +13,7 @@ export default function NotFoundPage() {
   const router = useRouter();
   const { language } = useLanguage();
   let text;
-  if (language === "sv") {
+  if (language === process.env.NEXT_PUBLIC_SWEDISH) {
     text = NOT_FOUND_PAGE_SWE;
   } else {
     text = NOT_FOUND_PAGE_ENG;
