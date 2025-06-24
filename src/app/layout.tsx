@@ -17,7 +17,8 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const cookieStore = await cookies();
-  const languageCookie = cookieStore.get("languageCookie")?.value || "sv";
+  const languageCookie =
+    cookieStore.get(process.env.LANGUAGECOOKIE)?.value || process.env.SWEDISH;
 
   return (
     <html lang={languageCookie}>
