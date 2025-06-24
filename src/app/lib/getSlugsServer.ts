@@ -10,3 +10,7 @@ export function getSlugs(language : string) {
     }
 
 }
+export function getSlug(language: string): string {
+  const slugs = getSlugs(language)[3];
+  return slugs;
+}

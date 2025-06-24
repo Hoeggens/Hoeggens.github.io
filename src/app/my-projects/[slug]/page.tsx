@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getProject } from "../../lib/fetchProjects";
 import { cookies } from "next/headers";
+import { getSlug } from "../../lib/getSlugsServer";
 
 interface PageProps {
   params: { slug: string };
@@ -17,10 +18,12 @@ export default async function ProjectPage({
   const language =
     cookieStore.get(process.env.LANGUAGECOOKIE)?.value || process.env.SWEDISH;
 
+  const directionSlug = await getSlug(language);
+
   const project = await getProject(language, resolvedParams.slug);
 
   if (!project) {
-    redirect("/my-projects");
+    redirect(`/${directionSlug}`);
   }
 
   return (
