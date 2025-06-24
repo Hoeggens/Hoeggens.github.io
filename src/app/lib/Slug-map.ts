@@ -14,7 +14,7 @@ const slugMap = {
 };
 
 export function getSlugs(language : string) {
-    if(language === process.env.NEXT_PUBLIC_SWEDISH) {
+    if(language === process.env.SWEDISH) {
         return slugMap.sv;
     }
     else

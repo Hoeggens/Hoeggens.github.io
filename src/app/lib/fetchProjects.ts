@@ -2,7 +2,7 @@ import { createSupabaseServerClient } from './SupabaseServer';
 
 export async function withdrawProjectData(language: string) {
     const supabase = createSupabaseServerClient();
-    const tableName = language === process.env.NEXT_PUBLIC_SWEDISH ? process.env.swedishProjects : process.env.englishProjects;
+    const tableName = language === process.env.SWEDISH ? process.env.swedishProjects : process.env.englishProjects;
 
     const { data, error } = await supabase
         .from(tableName)
