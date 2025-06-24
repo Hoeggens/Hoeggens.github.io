@@ -32,7 +32,7 @@ const Navbar = () => {
   let links: { href: string; label: string }[] = [];
 
   const hrefs = getSlugs(language);
-  if (language === "sv") {
+  if (language === process.env.swedish) {
     const labels = Object.values(NAVBAR_LABELS_SWE);
     links = labels.map((label, idx) => ({
       href: hrefs[idx],
