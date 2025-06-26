@@ -12,6 +12,7 @@ interface Project {
   project_content: string;
   project_description: string;
   project_name: string;
+  slug: string;
 }
 
 interface Props {
@@ -58,7 +59,7 @@ export default function ProjectSection({ projects }: Props) {
             className="bg-card-bg border border-border  rounded-lg p-6 transition hover:shadow-lg hover:border-accent"
           >
             <Link
-              href={`/${slug}/${project.project_name
+              href={`/${slug}/${project.slug
                 .replace(/\s+/g, "-")
                 .toLowerCase()}`}
               className="group block h-full"

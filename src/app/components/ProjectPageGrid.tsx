@@ -13,6 +13,7 @@ interface Project {
   project_content: string;
   project_description: string;
   project_name: string;
+  slug: string;
 }
 
 interface Props {
@@ -41,7 +42,7 @@ function ProjectPageGrid({ projects }: Props) {
           {projects.map((project) => (
             <Link
               key={project.id}
-              href={`/${slug}/${project.project_name
+              href={`/${slug}/${project.slug
                 .replace(/\s+/g, "-")
                 .toLowerCase()}`}
               className="bg-card-bg border border-border rounded-2xl shadow-md p-8 flex flex-col gap-6 text-text no-underline transition duration-200 hover:border-accent hover:shadow-lg min-h-[320px] min-w-[320px] 2xl:min-h-[540px] 2xl:min-w-[440px] group block"
